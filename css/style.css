@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url(../fonts/ptsans.woff2) format("woff2"),
+       url(../fonts/ptsans.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url(../fonts/ptsansbold.woff2) format("woff2"),
+       url(../fonts/ptsansbold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Variables */
+
+:root {
+  --basic-white: #ffffff;
+  --basic-light-gray: #f2f2f2; /* input */
+  --basic-gray: #eeeeee; /* main page li bcgrnd */
+  --special-gray: #e5e5e5; /* borders inner page */
+  --medium-gray: #cacaca; /* inactive sorting icone */
+  --special-dark-gray: #a9a9a9; /* form input icon */
+  --dove-gray: #666666; /* rating inner page*/
+  --basic-blue: #81b3d2;
+  --basic-light-brown: #766357; /* buttons */
+  --basic-dark-brown: #333333; /* text */
+  --basic-black: #000000;
+}
+
+/* Global */
+
+body {
+  min-width: 1220px;
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+}

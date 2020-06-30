@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Главная|Город Седона</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header>
       <nav>
         <a aria-label="Вы на главной странице сайта города Седона.">
-          <img src="placeholder.svg" width="138" height="70" alt="Логотип города Седона.">
+          <img src="img/logo_sedona.svg" width="138" height="70" alt="Логотип города Седона.">
         </a>
         <ul>
          <li>
@@ -26,52 +28,54 @@
         </ul>
       </nav>
       <section>
-        <h1>Седона - город в Аризоне.</h1>
-        <img src="placeholder.svg" width="188" height="45" alt="Добро пожаловать в изумительную Седону. Потому что Гранд Каньон отстой.">
-        <img src="placeholder.svg" alt="">
-        <img src="placeholder.svg" alt="">
+        <h1 class="visually-hidden">Седона - город в Аризоне.</h1>
+        <img src="img/welcome.svg" width="189" height="46" alt="Добро пожаловать в изумительную Седону. Потому что Гранд Каньон - отстой.">
+        <img src="img/to_the_gorgeous.svg" width="256" height="29" alt="">
+        <img src="img/sedona_gc_sucks.svg" width="457" height="213" alt="">
       </section>
     </header>
     <main>
       <article class="advantage">
         <h2>Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
         <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
-        <ul class="advantage__list">
-          <li class="advantage__item advantage__item--long">
+        <ul class="advantage-list">
+          <li class="advantage-item advantage-item-long">
             <h3>Настоящий городок</h3>
             <p>№1</p>
             <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
-            <ul class="advantage__point-list">
-              <li class="advantage__point-item">
-                <p class="point__heading">Жильё</p>
+            <img src="img/photo_of_the_city.jpg" width="800" height="256" alt="Вид города: дома, деревья на переднем плане, горы - на фоне.">
+            <ul class="advantage-point-list">
+              <li class="advantage-point-item">
+                <p class="point-heading">Жильё</p>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
-              <li class="advantage__point-item">
-                <p class="point__heading">Еда</p>
+              <li class="advantage-point-item">
+                <p class="point-heading">Еда</p>
                 <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
               </li>
-              <li class="advantage__point-item">
-                <p class="point__heading">Сувениры</p>
+              <li class="advantage-point-item">
+                <p class="point-heading">Сувениры</p>
                 <p>Не только китайского, но и местного производства!</p>
               </li>
             </ul>
           </li>
-          <li class="advantage__item advantage__item--long">
+          <li class="advantage-item advantage-item-long">
+            <img src="img/devils_bridge.jpg" width="800" height="256" alt="Узкий перешеек, соединяющий две скалы, возвышающиеся над покрытой деревьям долиной.">
             <h3>Там есть Мост дьявола</h3>
             <p>№2</p>
             <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
           </li>
-          <li class="advantage__item">
+          <li class="advantage-item">
             <h3>Небольшая площадь</h3>
             <p>№3</p>
             <p>Все достопримечательности находятся очень близко</p>
           </li>
-          <li class="advantage__item">
+          <li class="advantage-item">
             <h3>Красивая дорога</h3>
             <p>№4</p>
             <p>Ехать в седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="advantage__item">
+          <li class="advantage-item">
             <h3>Мало туристов</h3>
             <p>№5</p>
             <p>Большинство едет в Гранд Каньон и толпится там</p>
@@ -84,45 +88,66 @@
         <button type="button">Поиск гостиницы в Седоне</button>
       </section>
       <section class="map">
-        <h2>Седона на карте</h2>
-      </section>
-      <section class="search-form">
-        <h2>Поиск гостиницы в Седоне</h2>
-        <form action="https://echo.htmlacademy.ru" method="get">
-          <p>
-            <label for="search__arrival">Дата заезда:</label>
-            <input id="search__arrival" type="text" name="arrival" placeholder="24 апреля 2017">
-          </p>
-          <p>
-            <label for="search__depature">Дата выезда:</label>
-            <input id="search__depature" type="text" name="depature" placeholder="4 июля 2017">
-          </p>
-          <p>
-            <label for="search__adults">Взрослые:</label>
-            <input id="search__adults" type="number" min="1" name="adults" value="2">
-          </p>
-          <p>
-            <label for="search__children">Дети:</label>
-            <input id="search__children" type="number" min="0" name="children" value="0">
-          </p>
-          <button type="submit">Найти</button>
-        </form>
+        <h2 class="visually-hidden">Седона на карте</h2>
+        <a href="#" aria-label="Показать Седону на карте">
+          <img src="img/map.png" width="1199" height="593" alt="Седона на карте">
+        </a>
       </section>
     </main>
     <footer>
-      <div class="footer__contacts">
+      <div class="footer-contacts">
         <p>#visitsedona</p>
         <a href="tel:+74956660166">Тел: +7(495) 666-01-66</a>
       </div>
-      <section class="footer__socials">
-        <h2>Седона в социальных сетях</h2>
-        <a href="#" aria-label="Аккаунт города Седона в Twitter.">Twitter</a>
-        <a href="#" aria-label="Группа города Седона в Facebook.">Facebook</a>
-        <a href="#" aria-label="Канал города Седона на YouTube.">YouTube</a>
+      <section class="footer-socials">
+        <h2 class="visually-hidden">Седона в социальных сетях</h2>
+        <a href="#" aria-label="Аккаунт города Седона в Twitter.">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10.95 1.14403C12.635 0.648028 13.934 1.41403 14.527 2.32303C15.2 2.09203 15.858 1.84203 16.538 1.61503C16.5249 2.30139 16.2117 2.94755 15.681 3.38303C16.366 3.55303 16.985 2.89203 16.985 2.89203C16.816 3.89203 15.979 4.68003 15.422 4.91603C15.191 11.666 12.247 16.133 5.34498 15.998H4.89898C4.48898 15.998 0.734977 15.538 0.000976562 14.111C2.27198 14.307 3.89398 13.689 4.69398 12.934C3.73398 12.634 2.01498 12.457 1.71498 9.98403C2.06398 10.09 2.27898 10.212 2.90498 10.103C1.70498 9.24703 0.373977 8.53003 0.447977 6.33003C0.732977 6.65803 1.51498 6.86603 1.78798 6.80203C1.08498 6.56103 -0.182023 3.44203 0.893977 1.85003C2.71198 3.70403 4.62898 5.45603 8.04598 5.62303C8.25398 3.33003 9.18298 1.79303 10.95 1.14403Z"
+              fill="white" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Группа города Седона в Facebook.">
+          <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Канал города Седона на YouTube.">
+          <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"
+              fill="white" />
+          </svg>
+        </a>
       </section>
-      <p class="footer__designed-by">Website by
-        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="HTML Academy. Профессиональный онлайн‑курс HTML и CSS, уровень 1.">HTML Academy</a>
+      <p class="footer-designed-by">Website by
+        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="HTML Academy. Профессиональный онлайн‑курс HTML и CSS, уровень 1.">
+          <img src="img/logo_htmlacademy.svg" width="114" height="40" alt="Логотип HTML Academy">
+        </a>
       </p>
     </footer>
+    <section class="search-form">
+      <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+      <form action="https://echo.htmlacademy.ru" method="get">
+        <p>
+          <label for="search-arrival">Дата заезда:</label>
+          <input id="search-arrival" type="text" name="arrival" placeholder="24 апреля 2017">
+        </p>
+        <p>
+          <label for="search-depature">Дата выезда:</label>
+          <input id="search-depature" type="text" name="depature" placeholder="4 июля 2017">
+        </p>
+        <p>
+          <label for="search-adults">Взрослые:</label>
+          <input id="search-adults" type="number" min="1" name="adults" value="2">
+        </p>
+        <p>
+          <label for="search-children">Дети:</label>
+          <input id="search-children" type="number" min="0" name="children" value="0">
+        </p>
+        <button type="submit">Найти</button>
+      </form>
+    </section>
   </body>
 </html>
