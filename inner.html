@@ -74,12 +74,23 @@
             <fieldset class="filter-form-group filter-price reset-fieldset">
               <legend>Стоимость в сутки (Р):</legend>
               <div class="filter-price-wrapper">
-                <label>От
-                  <input class="price-input" type="number" name="price-min" value="0" min="0" step="100">
-                </label>
-                <label>До
-                  <input class="price-input" type="number" name="price-max" value="3000" min="0" step="100">
-                </label>
+                <div class="price-label-wrapper">
+                  <label>От
+                    <input class="price-input" type="number" name="price-min" value="0" min="0" step="100">
+                  </label>
+                </div>
+                <div class="price-label-wrapper">
+                  <label>До
+                    <input class="price-input" type="number" name="price-max" value="3000" min="0" step="100">
+                  </label>
+                </div>
+              </div>
+              <div class="range-filter">
+                <div class="scale">
+                  <div class="bar"></div>
+                </div>
+                <div class="toggle toggle-min" tabindex="0"></div>
+                <div class="toggle toggle-max" tabindex="0"></div>
               </div>
             </fieldset>
             <button class="filter-form-button" type="submit">Показать</button>
@@ -101,14 +112,14 @@
             </li>
           </ul>
           <ul class="sorting-way-list reset-list">
-            <li>
+            <li class="sorting-way-item">
               <a class="sorting-way-link" href="#" aria-label="Сортировка по возрастанию">
                 <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.5 0L0 10H11L5.5 0Z" fill="#CACACA" />
                 </svg>
               </a>
             </li>
-            <li>
+            <li class="sorting-way-item">
               <a class="sorting-way-link sorting-way-current" aria-label="Сортировка по убыванию">
                 <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.5 10L11 0L0 0L5.5 10Z" fill="#CACACA" />
@@ -122,55 +133,67 @@
           <ul class="accomodation-list reset-list">
             <li class="accomodation-item">
               <img src="img/amara_resort.jpg" width="135" height="90" alt="Гостиница с лужайкой прямо перед красными скалами среди деревьев на фоне розового закатного неба.">
-              <div class="accomodation-item-discription">
+              <div class="accomodation-item-description">
                 <a class="accomodation-heading-link" href="#">
                   <h3>Amara Resort & Spa</h3>
                 </a>
                 <p class="reset-text">Гостиница</p>
                 <p class="reset-text">От 4000 Р.</p>
-                <a class="info-link button" href="#">Подробнее</a>
-                <a class="booking-link button" href="#">Забронировать</a>
+                <div class="info-booking-wrapper">
+                  <a class="info-link button" href="#">Подробнее</a>
+                  <a class="booking-link button" href="#">Забронировать</a>
+                </div>
               </div>
               <div class="accomodation-item-rating">
-                <img src="img/icons/star.svg" width="19" height="17" alt="4 звезды">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
+                <div class="rating-stars">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="4 звезды">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                </div>
                 <p class="reset-text">Рейтинг: 8,5</p>
               </div>
             </li>
             <li class="accomodation-item">
               <img src="img/desert_quail_inn.jpg" width="135" height="90" alt="Невысокое здание вдоль асфальтированной дороги с припаркованными на ней автомобилями.">
-              <div class="accomodation-item-discription">
+              <div class="accomodation-item-description">
                 <a class="accomodation-heading-link" href="#">
                   <h3>Desert Quail Inn</h3>
                 </a>
                 <p class="reset-text">Мотель</p>
                 <p class="reset-text">От 3000 Р.</p>
-                <a class="info-link button" href="#">Подробнее</a>
-                <a class="booking-link button" href="#">Забронировать</a>
+                <div class="info-booking-wrapper">
+                  <a class="info-link button" href="#">Подробнее</a>
+                  <a class="booking-link button" href="#">Забронировать</a>
+                </div>
               </div>
               <div class="accomodation-item-rating">
-                <img src="img/icons/star.svg" width="19" height="17" alt="3 звезды">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
-                <p class="reset-text">Рейтинг: 8,5</p>
+                <div class="rating-stars">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="3 звезды">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                </div>
+                <p class="reset-text">Рейтинг: 8,9</p>
               </div>
             </li>
             <li class="accomodation-item">
               <img src="img/villas_at_poco.jpg" width="135" height="90" alt="Одноэтажное здание на зеленом газоне среди густых деревьев.">
-              <div class="accomodation-item-discription">
+              <div class="accomodation-item-description">
                 <a class="accomodation-heading-link" href="#">
                   <h3>Villas at Poco Diablo</h3>
                 </a>
                 <p class="reset-text">Апартаменты</p>
                 <p class="reset-text">От 2000 Р.</p>
-                <a class="info-link button" href="#">Подробнее</a>
-                <a class="booking-link button" href="#">Забронировать</a>
+                <div class="info-booking-wrapper">
+                  <a class="info-link button" href="#">Подробнее</a>
+                  <a class="booking-link button" href="#">Забронировать</a>
+                </div>
               </div>
               <div class="accomodation-item-rating">
-                <img src="img/icons/star.svg" width="19" height="17" alt="2 звезды">
-                <img src="img/icons/star.svg" width="19" height="17" alt="">
+                <div class="rating-stars">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="2 звезды">
+                  <img src="img/icons/star.svg" width="19" height="17" alt="">
+                </div>
                 <p class="reset-text">Рейтинг: 9,2</p>
               </div>
             </li>

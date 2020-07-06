@@ -267,6 +267,77 @@ a {
   color: var(--basic-black);
 }
 
+.advantage-point-item {
+  position: relative;
+}
+
+.advantage-point-item:before {
+  position: absolute;
+
+  width: 75px;
+  height: 76px;
+  content: "";
+
+  background-repeat: no-repeat;
+}
+
+.advantage-point-item.place::before {
+  top: 60px;
+  left: 50%;
+
+  margin-left: -37px;
+
+  background-image: url(../img/icons/accomodation.svg);
+}
+
+.advantage-point-item.food::before {
+  top: 61px;
+  left: 50%;
+
+  margin-left: -38px;
+
+  background-image: url(../img/icons/food.svg);
+}
+
+.advantage-point-item.souvenirs::before {
+  top: 56px;
+  left: 50%;
+
+  margin-left: -32px;
+  background-image: url(../img/icons/souvenirs.svg);
+}
+
+.advantage-item .advantage-number {
+  position: relative;
+
+  display: inline-flex;
+  justify-content: center;
+}
+
+.advantage-item .advantage-number::before,
+.advantage-item .advantage-number::after {
+  position: absolute;
+  top: 11px;
+
+  content: "";
+  width: 8px;
+  height: 1px;
+  background-color: var(--basic-dark-brown);
+}
+
+.advantage-item-long .advantage-number::before,
+.advantage-item-long .advantage-number::after {
+  background-color: var(--basic-white);
+}
+
+.advantage-item .advantage-number::before {
+  left: -11px;
+}
+
+.advantage-item .advantage-number::after {
+  right: -11px;
+}
+
 /* Advantage layout */
 
 .advantage-list {
@@ -363,6 +434,7 @@ a {
   color: var(--basic-white);
 
   border: none;
+  cursor: pointer;
 }
 
 .search-link {
@@ -388,22 +460,31 @@ a {
   background-color: var(--special-dark-brown);
 }
 
+/* Animations */
+
+@keyframes slide {
+}
+
+
 /* Modal form */
 
 .modal-form-wrapper {
   position: relative;
+
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
 
-.modal-form {
+.modal-form.modal-hide {
   display: none;
 }
 
-.modal-form.modal-show {
+.modal-form {
   position: absolute;
   top: 86px;
   left: 0;
+
   width: 100%; /* ширина окна с формой зависит от ширины кнопки */
   box-sizing: border-box;
   display: flex;
@@ -411,6 +492,10 @@ a {
 
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.modal-form.modal-show {
+  animation: slide 1.5s;
 }
 
 .search-form {
@@ -470,6 +555,8 @@ a {
   top: 3px;
   right: 90px;
   z-index: 1;
+
+  cursor: pointer;
 }
 
 .search-amount .amount-controls-plus {
@@ -477,6 +564,8 @@ a {
   top: 6px;
   right: 15px;
   z-index: 1;
+
+  cursor: pointer;
 }
 
 .search-date input {
@@ -548,6 +637,12 @@ a {
 
   background-color: var(--special-dark-blue);
   outline: none;
+}
+
+/* Map */
+
+.map iframe {
+  border: none;
 }
 
 /* Footer */
@@ -666,14 +761,36 @@ a {
   background-repeat: no-repeat;
 }
 
+/* .filter-form::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  content: "";
+  width: 1200px;
+  height: 216px;
+
+  background-image: url(../img/sedona_landscape.jpg);
+  background-position: 0 -210px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  filter: blur(15px);
+} */
+
 .filter-form {
+  /* position: relative; */
+
   display: flex;
   justify-content: space-between;
 
   text-align: left;
 
   -webkit-backdrop-filter: blur(15px);
-  /* backdrop-filter: blur(15px); */ /* validator error */
+  backdrop-filter: blur(15px); /* validator error */
 }
 
 .filter-column-wrapper {
@@ -684,7 +801,6 @@ a {
 .filter-infrastructure {
   margin-right: 119px;
 }
-
 
 .filter-form-group li:not(:last-child) {
   margin-bottom: 25px;
@@ -698,7 +814,6 @@ a {
   appearance: none;
 }
 
-.check-input:focus,
 .check-input:active {
   outline: none;
 }
@@ -733,6 +848,7 @@ a {
   background-repeat: no-repeat;
 }
 
+
 .filter-form legend {
   margin-bottom: 25px;
 
@@ -745,6 +861,8 @@ a {
   align-items: center;
   width: 318px;
 }
+
+/* Price filter */
 
 .filter-form .price-input {
   width: 50px;
@@ -769,17 +887,108 @@ a {
 }
 
 .filter-price-wrapper {
+  display: flex;
   width: 318px;
-  padding: 6px 20px;
+  padding: 6px 5px;
   box-sizing: border-box;
 
   border: 2px solid var(--basic-white);
   border-radius: 2px;
 }
 
+.price-label-wrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  width: 159px;
+  box-sizing: border-box;
+}
+
+.price-label-wrapper:first-child {
+  margin-left: 37px;
+}
+
+.price-label-wrapper:last-child {
+  margin-left: 25px;
+}
+
+.price-label-wrapper:first-child::after {
+  position: absolute;
+  top: 0;
+  right: 5px;
+
+  content: "";
+  width: 2px;
+  height: 22px;
+
+  background-color: var(--basic-white);
+}
+
+/* Range filter */
+
+.range-filter {
+  position: relative;
+  width: 318px;
+  padding: 20px 0 33px;
+  box-sizing: border-box;
+}
+
+.scale {
+  width: 316px;
+  height: 2px;
+  box-sizing: border-box;
+
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bar {
+  width: 80%;
+  height: 2px;
+  margin-left: 3%;
+
+  background-color: var(--basic-white);
+}
+
+.toggle {
+  position: absolute;
+  top: 11px;
+
+  width: 4px;
+  height: 4px;
+
+  background-color: #ababab;
+  border: 7.5px solid var(--basic-white);
+  border-radius: 50%;
+  box-shadow: 0 2px rgba(171, 171, 171, 0.3);
+
+  /* width: 19px;
+  height: 21px;
+
+  background-image: url(../img/icons/toggle.svg);
+  background-repeat: no-repeat; */
+  cursor: pointer;
+}
+
+.toggle:hover {
+  border: 9px solid var(--basic-white);
+}
+
+.toggle-min {
+  left: 0;
+}
+
+.toggle-max {
+  left: 80%;
+}
+
+/* Filter button */
+
 .filter-form-button {
   min-width: 137px;
-  padding: 7px 10px;
+  padding: 5px 10px;
+  margin-left: 85px;
+  margin-right: 95px;
 
   font-size: 14px;
   line-height: 21px;
@@ -789,6 +998,8 @@ a {
   background-color: transparent;
   border: 2px solid var(--basic-white);
   border-radius: 2px;
+
+  cursor: pointer;
 }
 
 .filter-form-button:hover {
@@ -850,21 +1061,57 @@ a {
   fill: var(--basic-light-blue);
 }
 
+/* Sorting layout */
+
+.results-sorting {
+  display: flex;
+  align-items: center;
+  padding: 20px 73px 25px;
+
+  border-bottom: 1px solid var(--special-gray);
+}
+
+.results-sorting ul {
+  display: flex;
+}
+
+.sorting-type-list {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.search-result {
+  margin-right: 46px;
+}
+
+.results-sorting h3 {
+  margin-right: 41px;
+}
+
+.sorting-type-item:not(:last-child) {
+  margin-right: 33px;
+}
+
+.sorting-way-item:not(:last-child) {
+  margin-right: 12px;
+}
+
 /* Accomodation */
 
-.accomodation-heading-link {
+.accomodation-heading-link h3 {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
   color: var(--basic-black);
+  text-align: left;
 }
 
-.accomodation-heading-link:hover,
-.accomodation-heading-link:focus {
+.accomodation-heading-link:hover h3,
+.accomodation-heading-link:focus h3 {
   color: var(--basic-light-blue);
 }
 
-.accomodation-heading-link:active {
+.accomodation-heading-link:active h3 {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -908,8 +1155,84 @@ a {
   background-color: var(--basic-light-gray);
 }
 
+/* Accomodation layout */
+
+.accomodation-list {
+  text-align: left;
+}
+
+.accomodation-item {
+  display: flex;
+  min-height: 151px;
+  padding: 24px 73px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--special-gray);
+}
+
+ .accomodation-item > img {
+  margin-right: 29px;
+  align-self: center;
+}
+
+.accomodation-heading-link h3 {
+  margin: 0;
+}
+
+.accomodation-item-description {
+  width: 100%;
+}
+
+.accomodation-item-description p {
+  display: inline-flex;
+  margin-top: 6px;
+  margin-bottom: 15px;
+}
+
+.accomodation-item-description p:first-of-type {
+  min-width: 113px;
+}
+
+.accomodation-item-description p:last-of-type {
+  min-width: 96px;
+}
+
+.info-link,
+.booking-link {
+  display: inline-flex;
+  justify-content: center;
+  padding: 4px 10px;
+  box-sizing: border-box;
+}
+
+.info-link {
+  min-width: 110px;
+  margin-right: 4px;
+}
+
+.booking-link {
+  min-width: 140px;
+}
+
+.accomodation-item-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 110px;
+  padding: 5px 0;
+}
+
+.rating-stars {
+  text-align: right;
+}
+
+.accomodation-item-rating p {
+  padding: 4px 10px;
+  text-align: center;
+}
+
 /* Footer */
 
-.footer {
+.inner-page .footer {
   position: static;
 }
