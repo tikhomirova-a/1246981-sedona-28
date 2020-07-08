@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Главная|Город Седона</title>
-    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -94,7 +94,7 @@
           <h2>Заинтересовались?</h2>
           <p class="search-text reset-text">Укажите предполагаемые даты поездки,<br>и мы покажем Вам лучшие предложения гостиниц в Седоне
           </p>
-          <div class="modal-form-wrapper">
+          <!-- <div class="modal-form-wrapper"> -->
             <a class="button search-link" href="#">Поиск гостиницы в Седоне</a>
             <section class="modal-form">
               <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
@@ -130,15 +130,15 @@
                 <p class="search-amount reset-text">
                   <label for="search-adults">Взрослые:</label>
                   <span class="amount-controls-minus" tabindex="0">
-                    <svg width="12" height="3" aria-labelledby="control-minus" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <title id="control-minus">Уменьшить количество</title>
+                    <svg width="12" height="3" aria-labelledby="adult-control-minus" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title id="adult-control-minus">Уменьшить количество взрослых</title>
                       <rect width="12" height="3" fill="#A9A9A9" />
                     </svg>
                   </span>
                   <input id="search-adults" type="number" min="1" name="adults" value="2">
                   <span class="amount-controls-plus" tabindex="0">
-                    <svg width="11" height="11" aria-labelledby="control-plus" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <title id="control-plus">Увеличить количество</title>
+                    <svg width="11" height="11" aria-labelledby="adult-control-plus" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title id="adult-control-plus">Увеличить количество взрослых</title>
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9" />
                     </svg>
@@ -147,15 +147,15 @@
                 <p class="search-amount reset-text">
                   <label for="search-children">Дети:</label>
                   <span class="amount-controls-minus" tabindex="0">
-                    <svg width="12" height="3" aria-labelledby="control-minus" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <title id="control-minus">Уменьшить количество</title>
+                    <svg width="12" height="3" aria-labelledby="children-control-minus" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title id="children-control-minus">Уменьшить количество детей</title>
                       <rect width="12" height="3" fill="#A9A9A9" />
                     </svg>
                   </span>
                   <input id="search-children" type="number" min="0" name="children" value="0">
                   <span class="amount-controls-plus" tabindex="0">
-                    <svg width="11" height="11" aria-labelledby="control-plus" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <title id="control-plus">Увеличить количество</title>
+                    <svg width="11" height="11" aria-labelledby="children-control-plus" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title id="children-control-plus">Увеличить количество детей</title>
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9" />
                     </svg>
@@ -164,7 +164,7 @@
                 <button class="button search-form-button" type="submit">Найти</button>
               </form>
             </section>
-          </div>
+          <!-- </div> -->
         </section>
         <section class="map">
           <h2 class="visually-hidden">Седона на карте</h2>
@@ -216,6 +216,6 @@
         </p>
       </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

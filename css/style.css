@@ -98,6 +98,7 @@ a {
 .page-layout {
   display: grid;
   min-height: 100%;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
 }
@@ -343,6 +344,7 @@ a {
 .advantage-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
   grid-template-rows: min-content min-content min-content;
 }
 
@@ -358,7 +360,8 @@ a {
 
 
 .item-long-image {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   background-color: var(--special-cashmere);
 }
 
@@ -411,7 +414,15 @@ a {
 /* Search */
 
 .search {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 59px;
+
+  background-color: var(--basic-white);
 }
 
 .search h2 {
@@ -420,6 +431,8 @@ a {
   font-weight: bold;
   font-size: 30px;
   line-height: 24px;
+
+  background-color: var(--basic-white);
 }
 
 .search .search-text {
@@ -427,6 +440,8 @@ a {
 
   line-height: 26px;
   color: var(--basic-dark-brown);
+
+  background-color: var(--basic-white);
 }
 
 .button {
@@ -462,19 +477,35 @@ a {
 
 /* Animations */
 
-@keyframes slide {
+@-webkit-keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 
 /* Modal form */
 
-.modal-form-wrapper {
+/* .modal-form-wrapper {
   position: relative;
 
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-}
+} */
 
 .modal-form.modal-hide {
   display: none;
@@ -482,20 +513,31 @@ a {
 
 .modal-form {
   position: absolute;
-  top: 86px;
-  left: 0;
+  /* top: 86px; */
+  top: 100%;
+  /* bottom: 0; */
+  /* left: 0; */
+  z-index: -1;
 
-  width: 100%; /* ширина окна с формой зависит от ширины кнопки */
-  box-sizing: border-box;
   display: flex;
+  /* width: 100%; ширина окна с формой зависит от ширины кнопки */
+  width: 568px;
+  box-sizing: border-box;
   padding: 54px;
+  justify-self: center;
 
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 .modal-form.modal-show {
-  animation: slide 1.5s;
+  /* top: 86px; */
+  bottom: auto;
+  top: 100%;
+
+  -webkit-animation: slide 1.5s;
+
+          animation: slide 1.5s;
 }
 
 .search-form {
@@ -508,6 +550,22 @@ a {
   position: relative;
 
   margin-bottom: 30px;
+}
+
+.search-form input::-webkit-input-placeholder {
+  font-weight: bold;
+  line-height: 26px;
+  text-align: initial;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.search-form input::-moz-placeholder {
+  font-weight: bold;
+  line-height: 26px;
+  text-align: initial;
+  color: var(--basic-black);
+  text-transform: uppercase;
 }
 
 .search-form,
@@ -755,42 +813,18 @@ a {
   color: var(--basic-white);
 
   background-color: var(--special-medium-blue);
-  background-image: url(../img/sedona_landscape.jpg);
-  background-position: 0 -210px;
+  background-image: url(../img/landscape_blur.jpg);
+  background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* .filter-form::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  content: "";
-  width: 1200px;
-  height: 216px;
-
-  background-image: url(../img/sedona_landscape.jpg);
-  background-position: 0 -210px;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  -webkit-filter: blur(15px);
-  -moz-filter: blur(15px);
-  filter: blur(15px);
-} */
 
 .filter-form {
-  /* position: relative; */
-
   display: flex;
   justify-content: space-between;
 
   text-align: left;
-
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px); /* validator error */
 }
 
 .filter-column-wrapper {
@@ -819,35 +853,34 @@ a {
 }
 
 .check-label {
+  position: relative;
+
   padding-left: 40px;
 }
 
-.check-input::after {
+.check-box {
   position: absolute;
   top: 0;
   left: 0;
 
-  content: "";
-  width: 23px;
+  width: 27px;
   height: 23px;
 
   background-image: url(../img/icons/checkbox_off.svg);
   background-repeat: no-repeat;
 }
 
-.check-input:checked::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  content: "";
-  width: 27px;
-  height: 23px;
-
+.check-input:checked + .check-box {
   background-image: url(../img/icons/checkbox_on.svg);
-  background-repeat: no-repeat;
 }
 
+.check-input:disabled + .check-box {
+  background-image: url(../img/icons/checkbox_off_disabled.svg);
+}
+
+.check-input:checked:disabled + .check-box {
+  background-image: url(../img/icons/checkbox_on_disabled.svg);
+}
 
 .filter-form legend {
   margin-bottom: 25px;
