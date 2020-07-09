@@ -20,13 +20,15 @@
   --basic-white: #ffffff;
   --basic-light-gray: #f2f2f2; /* input */
   --special-light-gray: #ebebeb; /* input hover */
-  --basic-gray: #eeeeee; /* main page li bcgrnd */
+  --basic-gray: #eeeeee; /* main page li background */
   --special-gray: #e5e5e5; /* borders inner page */
   --medium-gray: #cacaca; /* inactive sorting icone */
   --special-dark-gray: #a9a9a9; /* form input icon */
+  --silver-gray: #ababab; /* toggle */
   --pale-gray: #bdbbbc; /* html logo active */
   --dove-gray: #666666; /* rating inner page*/
   --dark-dove-gray: #6a6a6a; /* checkbox disabled */
+  --link-water: #e2eff8; /* header-background */
   --basic-light-blue: #81b3d2;
   --special-medium-blue: #669EC0; /* hover */
   --special-dark-blue: #5496BD; /* active */
@@ -41,7 +43,7 @@
 /* Global */
 
 body {
-  min-width: 1220px;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
 
@@ -173,17 +175,10 @@ a {
   width: 1200px;
   height: 509px;
 
-  background-color: #e2eff8;
+  background-color: var(--link-water);
   background-image: url(../img/sedona_landscape.jpg);
   background-repeat: no-repeat;
   background-position: 0 -1px;
-
-  /* -webkit-mask-image: url(../img/icons/header_mask.svg);
-  mask-image: url(../img/icons/header_mask.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: bottom;
-  mask-position: bottom; */
 }
 
 .main-heading::after {
@@ -199,16 +194,8 @@ a {
   background-position: bottom;
 }
 
-.main-heading .header-first-image {
+.main-heading .header-image {
   margin-top: 76px;
-}
-
-.main-heading .header-second-image {
-  margin-top: 10px;
-}
-
-.main-heading .header-third-image {
-  margin-top: 53px;
 }
 
 /* Main */
@@ -415,7 +402,7 @@ a {
 
 .search {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 
   display: flex;
   flex-direction: column;
@@ -497,15 +484,25 @@ a {
   }
 }
 
+@keyframes shake {
+  20% {
+    transform: translateX(-30px);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Modal form */
-
-/* .modal-form-wrapper {
-  position: relative;
-
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-} */
 
 .modal-form.modal-hide {
   display: none;
@@ -513,14 +510,10 @@ a {
 
 .modal-form {
   position: absolute;
-  /* top: 86px; */
   top: 100%;
-  /* bottom: 0; */
-  /* left: 0; */
-  z-index: -1;
+  /* z-index: -1; */
 
   display: flex;
-  /* width: 100%; ширина окна с формой зависит от ширины кнопки */
   width: 568px;
   box-sizing: border-box;
   padding: 54px;
@@ -531,13 +524,17 @@ a {
 }
 
 .modal-form.modal-show {
-  /* top: 86px; */
+  top: 86px;
   bottom: auto;
   top: 100%;
 
   -webkit-animation: slide 1.5s;
 
           animation: slide 1.5s;
+}
+
+.modal-form.modal-error {
+  animation: shake 0.4s;
 }
 
 .search-form {
@@ -566,6 +563,8 @@ a {
   text-align: initial;
   color: var(--basic-black);
   text-transform: uppercase;
+
+  opacity: 1;
 }
 
 .search-form,
@@ -608,22 +607,46 @@ a {
   margin-left: 25px;
 }
 
+.search-amount button {
+  padding: 0;
+  margin: 0;
+
+  background-color: transparent;
+  border: none;
+}
+
 .search-amount .amount-controls-minus {
   position: absolute;
-  top: 3px;
+  top: 8px;
   right: 90px;
-  z-index: 1;
+  /* z-index: 1; */
 
   cursor: pointer;
 }
 
 .search-amount .amount-controls-plus {
   position: absolute;
-  top: 6px;
+  top: 12px;
   right: 15px;
-  z-index: 1;
 
   cursor: pointer;
+}
+
+.search-amount button:hover path,
+.search-amount button:hover rect,
+.search-amount button:focus path,
+.search-amount button:focus rect {
+  fill: var(--basic-black);
+}
+
+.search-amount button:active path,
+.search-amount button:active rect {
+  fill: var(--basic-light-blue);
+}
+
+.search-amount button:focus,
+.search-amount button:active {
+  outline: none;
 }
 
 .search-date input {
@@ -647,6 +670,13 @@ a {
   position: absolute;
   top: 7px;
   right: 10px;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
 }
 
 .search-date-icon:hover path,
@@ -833,7 +863,7 @@ a {
 }
 
 .filter-infrastructure {
-  margin-right: 119px;
+  margin-right: 117px;
 }
 
 .filter-form-group li:not(:last-child) {
@@ -856,6 +886,10 @@ a {
   position: relative;
 
   padding-left: 40px;
+}
+
+.filter-accomodation-type .check-label {
+  padding-left: 43px;
 }
 
 .check-box {
@@ -989,17 +1023,13 @@ a {
 
   width: 4px;
   height: 4px;
+  padding: 2px;
 
-  background-color: #ababab;
+  background-color: var(--silver-gray);
   border: 7.5px solid var(--basic-white);
   border-radius: 50%;
   box-shadow: 0 2px rgba(171, 171, 171, 0.3);
 
-  /* width: 19px;
-  height: 21px;
-
-  background-image: url(../img/icons/toggle.svg);
-  background-repeat: no-repeat; */
   cursor: pointer;
 }
 
@@ -1079,6 +1109,10 @@ a {
   color: var(--basic-black);
 
   border: none;
+}
+
+.sorting-way-list {
+  padding-top: 10px;
 }
 
 .sorting-way-link:hover[href] path,
@@ -1256,11 +1290,32 @@ a {
 }
 
 .rating-stars {
+  width: 100px;
+  height: 17px;
+  align-self: flex-end;
+
   text-align: right;
+
+  background-image: url(../img/icons/star.svg);
+  background-repeat: repeat-x;
+  background-size: 24px 17px;
+
+}
+
+.accomodation-item:first-child .rating-stars {
+  width: 92px;
+}
+
+.accomodation-item:nth-child(2) .rating-stars {
+  width: 68px;
+}
+
+.accomodation-item:last-child .rating-stars {
+  width: 44px;
 }
 
 .accomodation-item-rating p {
-  padding: 4px 10px;
+  padding: 3px 10px 3px 15px;
   text-align: center;
 }
 
