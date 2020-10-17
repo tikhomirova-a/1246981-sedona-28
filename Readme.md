@@ -12,14 +12,19 @@
 * Наставник: [Ольга Вадясова](https://htmlacademy.ru/profile/ad0v0).
 ---
 ### Просмотр в браузере
+
 **1. Клонируйте репозиторий.**
 ```
 git clone https://github.com/tikhomirova-a/sedona.git
 ```
+
 **2. Перейдите в директорию с репозиторием проекта.**
 
 **3. Откройте файл index.html в одном из поддерживаемых по ТЗ проекта браузеров:**
+
 Chrome, Firefox последних двух версий.
+
+
 ---
 <a href="https://htmlacademy.ru/intensive/htmlcss"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/htmlcss/logo-for-github-2.png"></a>
 
